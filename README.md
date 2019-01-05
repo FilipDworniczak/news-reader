@@ -22,3 +22,7 @@ To receive NEWS_API_KEY you can register to newsapi.org and get one.
 ## Rest API
 
 Rest API documentation is generated with Swagger. When server application is running, please go [here](http://localhost:8080/swagger-ui.html) to get familiar with it.
+
+## Testing
+
+To run integration tests please perform `./mvnw test`.

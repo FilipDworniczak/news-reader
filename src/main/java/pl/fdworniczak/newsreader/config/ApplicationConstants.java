@@ -11,7 +11,6 @@ public class ApplicationConstants {
     public static final String REST_PREFIX = "/api/";
 
     // News Api
-    public static final String NEWS_API_URL = "https://newsapi.org/v2";
     public static final String NEWS_API_TOP_HEADLINES = "/top-headlines";
 
     // Entities

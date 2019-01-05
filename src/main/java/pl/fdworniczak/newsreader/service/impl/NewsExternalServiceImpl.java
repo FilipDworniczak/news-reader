@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,9 @@ public class NewsExternalServiceImpl implements NewsExternalService {
     @Autowired
     private Environment env;
 
+    @Value("${services.newsapi.url}")
+    private String newsApiUrl;
+
     @Override
     public NewsDto getNews(final String country, final String category) {
         if (StringUtils.isEmpty(country) || StringUtils.isEmpty(category)) {
@@ -40,7 +44,7 @@ public class NewsExternalServiceImpl implements NewsExternalService {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<JsonNode> response;
         try {
-            response = restTemplate.getForEntity(ApplicationConstants.NEWS_API_URL + ApplicationConstants.NEWS_API_TOP_HEADLINES
+            response = restTemplate.getForEntity(newsApiUrl + ApplicationConstants.NEWS_API_TOP_HEADLINES
                     + "?country=" + country + "&category=" + category + "&apiKey=" + env.getProperty("services.newsapi.key"), JsonNode.class);
         } catch (HttpStatusCodeException ex) {
             try {
