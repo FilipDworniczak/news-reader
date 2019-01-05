@@ -2,7 +2,10 @@
 
 Server application built on Spring Boot that serves worldwide news data over REST API. Powered by newsapi.org.
 
-Please use dedicated client app [news-reader-frontend](https://github.com/filipdworniczak/news-reader-frontend) .
+Please use dedicated client app [news-reader-frontend](https://github.com/filipdworniczak/news-reader-frontend).
+
+Application required News api key to work which is provided by run parameter. For details read Running section.
+As there are daily limits limits of newsapi.org request calls, application will cache requests, but not permanently, so the user could be updated by the latest news after time.
 
 ## Building
 

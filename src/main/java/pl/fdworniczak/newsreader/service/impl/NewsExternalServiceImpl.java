@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,7 @@ public class NewsExternalServiceImpl implements NewsExternalService {
     private String newsApiUrl;
 
     @Override
+    @Cacheable("news")
     public NewsDto getNews(final String country, final String category) {
         if (StringUtils.isEmpty(country) || StringUtils.isEmpty(category)) {
             throw new IllegalArgumentException("country or category property is empty");
