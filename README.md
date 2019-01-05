@@ -2,7 +2,7 @@
 
 Server application built on Spring Boot that serves worldwide news data over REST API. Powered by newsapi.org.
 
-Please use dedicated client app (news-reader-frontend)[https://github.com/filipdworniczak/news-reader-frontend] .
+Please use dedicated client app [news-reader-frontend](https://github.com/filipdworniczak/news-reader-frontend) .
 
 ## Building
 
@@ -21,4 +21,4 @@ To receive NEWS_API_KEY you can register to newsapi.org and get one.
 
 ## Rest API
 
-Rest API documentation is generated with Swagger. When server application is running, please go (here)[http://localhost:8080/swagger-ui.html] to get familiar with it.
+Rest API documentation is generated with Swagger. When server application is running, please go [here](http://localhost:8080/swagger-ui.html) to get familiar with it.
